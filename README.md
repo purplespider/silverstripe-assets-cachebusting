@@ -20,14 +20,26 @@ This module adds automatic cache busting to all asset URLs in SilverStripe by ap
 
 When the file content changes, the hash automatically updates, forcing browsers to fetch the new version.
 
-## Requirements
+## Version Compatibility
 
-- SilverStripe ^5.0 or ^6.0
-- SilverStripe Assets ^2.0 or ^3.0
+| Module Version | SilverStripe Version | Assets Version |
+|----------------|---------------------|----------------|
+| 1.x            | 5.x                 | 2.x            |
+| 2.x            | 6.x                 | 3.x            |
+
+**For SilverStripe 5:** Use version 1.x
+```bash
+composer require purplespider/silverstripe-assets-cachebusting:^1.0
+```
+
+**For SilverStripe 6:** Use version 2.x (current)
+```bash
+composer require purplespider/silverstripe-assets-cachebusting:^2.0
+```
 
 ## Installation
 
-Install via Composer:
+Install via Composer (will install the version compatible with your SilverStripe installation):
 
 ```bash
 composer require purplespider/silverstripe-assets-cachebusting
@@ -35,8 +47,14 @@ composer require purplespider/silverstripe-assets-cachebusting
 
 Then run dev/build:
 
+**SilverStripe 5:**
 ```bash
-vendor/bin/sake dev/build flush=1
+vendor/silverstripe/framework/cli-script.php dev/build flush=1
+```
+
+**SilverStripe 6:**
+```bash
+vendor/bin/sake db:build --flush
 ```
 
 ## Configuration
