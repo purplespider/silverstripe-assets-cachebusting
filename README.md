@@ -50,7 +50,7 @@ SilverStripe\Assets\File:
 
 ## How It Works
 
-The module extends `SilverStripe\Assets\Storage\DBFile` and hooks into the `updateURL` extension point. This ensures cache busting works automatically for:
+The module extends `SilverStripe\Assets\Storage\DBFile` and hooks into the `updateURL` extension point. This ensures cache busting works automatically everywhere, including:
 
 - Regular file URLs: `$file->URL()`
 - Absolute URLs: `$file->AbsoluteURL()`
@@ -61,6 +61,8 @@ The module extends `SilverStripe\Assets\Storage\DBFile` and hooks into the `upda
 - Images and files referenced in templates
 - Background images in CSS
 - Srcset attributes
+
+This means when a CMS user replaces an asset, the cache buster updates automatically - even for images embedded in content or templates - ensuring Cloudflare and other CDNs serve the new version immediately.
 
 ### Cache Buster Value
 
