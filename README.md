@@ -28,7 +28,7 @@ When the file content changes, the hash automatically updates, forcing browsers 
 Install via Composer:
 
 ```bash
-composer require purplespider/silverstripe-cachebusting
+composer require purplespider/silverstripe-assets-cachebusting
 ```
 
 Then run dev/build:
@@ -116,10 +116,10 @@ BSD-3-Clause. See [LICENSE](LICENSE) for details.
 
 ## Contributing
 
-Contributions are welcome! Please open an issue or pull request on [GitHub](https://github.com/purplespider/silverstripe-cachebusting).
+Contributions are welcome! Please open an issue or pull request on [GitHub](https://github.com/purplespider/silverstripe-assets-cachebusting).
 
 ## Support
 
 For issues or questions:
-- Open an issue on [GitHub](https://github.com/purplespider/silverstripe-cachebusting/issues)
+- Open an issue on [GitHub](https://github.com/purplespider/silverstripe-assets-cachebusting/issues)
 - Contact: [hello@purplespider.com](mailto:hello@purplespider.com)

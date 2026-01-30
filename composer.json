@@ -1,5 +1,5 @@
 {
-    "name": "purplespider/silverstripe-cachebusting",
+    "name": "purplespider/silverstripe-assets-cachebusting",
     "description": "Automatic cache busting for SilverStripe assets by appending file hash to URLs",
     "type": "silverstripe-vendormodule",
     "keywords": [
