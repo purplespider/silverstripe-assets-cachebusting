@@ -4,7 +4,9 @@ Automatic cache busting for SilverStripe assets by appending file content hash t
 
 ## Overview
 
-This module adds automatic cache busting to all asset URLs in SilverStripe by appending a unique parameter based on the file's content hash. This allows you to set aggressive browser cache headers (long expiry times) while ensuring browsers fetch updated files when they change.
+This module adds automatic cache busting to all asset URLs in SilverStripe by appending a unique parameter based on the file's content hash. This allows you to set aggressive browser cache headers (long expiry times) while ensuring browsers and CDNs (like Cloudflare) fetch updated files when they change.
+
+**Solves a common problem**: When a CMS user replaces an asset with a new file using the same filename, CDNs and browsers can serve the old cached version for hours or days. This module ensures the URL changes automatically when the file content changes, forcing immediate updates.
 
 **Before:**
 ```
