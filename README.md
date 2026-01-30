@@ -65,9 +65,3 @@ BSD-3-Clause. See [LICENSE](LICENSE) for details.
 ## Contributing
 
 Contributions are welcome! Please open an issue or pull request on [GitHub](https://github.com/purplespider/silverstripe-assets-cachebusting).
-
-## Support
-
-For issues or questions:
-- Open an issue on [GitHub](https://github.com/purplespider/silverstripe-assets-cachebusting/issues)
-- Contact: [hello@purplespider.com](mailto:hello@purplespider.com)
