@@ -1,0 +1,10 @@
+---
+Name: purplespider-cachebusting
+After:
+  - '#assetsflysystem'
+---
+SilverStripe\Assets\File:
+  enable_cache_busting: true
+SilverStripe\Assets\Storage\DBFile:
+  extensions:
+    - PurpleSpider\CacheBusting\Extensions\DBFileCacheBustingExtension

@@ -1,0 +1,36 @@
+{
+    "name": "purplespider/silverstripe-cachebusting",
+    "description": "Automatic cache busting for SilverStripe assets by appending file hash to URLs",
+    "type": "silverstripe-vendormodule",
+    "keywords": [
+        "silverstripe",
+        "cache",
+        "cache-busting",
+        "assets",
+        "performance"
+    ],
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "James Cocker",
+            "email": "hello@purplespider.com",
+            "homepage": "https://purplespider.com"
+        }
+    ],
+    "require": {
+        "silverstripe/assets": "^2.0 || ^3.0",
+        "silverstripe/framework": "^5.0 || ^6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "PurpleSpider\\CacheBusting\\": "src/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-main": "1.x-dev"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
