@@ -1,4 +1,4 @@
-# SilverStripe Cache Busting
+# SilverStripe Assets Cache Busting
 
 Automatic cache busting for SilverStripe assets by appending file content hash to URLs.
 
