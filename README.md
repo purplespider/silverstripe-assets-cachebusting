@@ -50,13 +50,15 @@ SilverStripe\Assets\File:
 
 ## How It Works
 
-The module extends `SilverStripe\Assets\Storage\DBFile` and hooks into the `updateURL` extension point. This ensures cache busting works for:
+The module extends `SilverStripe\Assets\Storage\DBFile` and hooks into the `updateURL` extension point. This ensures cache busting works automatically for:
 
 - Regular file URLs: `$file->URL()`
 - Absolute URLs: `$file->AbsoluteURL()`
 - Links: `$file->Link()`
 - Resized images: `$image->ScaleWidth(600)`
 - Image manipulations and variants
+- Images and files in WYSIWYG/TinyMCE content
+- Images and files referenced in templates
 - Background images in CSS
 - Srcset attributes
 
