@@ -50,67 +50,9 @@ SilverStripe\Assets\File:
 
 ## How It Works
 
-The module extends `SilverStripe\Assets\Storage\DBFile` and hooks into the `updateURL` extension point. This ensures cache busting works automatically everywhere, including:
+The module automatically appends a unique hash parameter to all asset URLs. The hash is based on the file's content, so it changes whenever a file is replaced - even if the filename stays the same.
 
-- Regular file URLs: `$file->URL()`
-- Absolute URLs: `$file->AbsoluteURL()`
-- Links: `$file->Link()`
-- Resized images: `$image->ScaleWidth(600)`
-- Image manipulations and variants
-- Images and files in WYSIWYG/TinyMCE content
-- Images and files referenced in templates
-- Background images in CSS
-- Srcset attributes
-
-This means when a CMS user replaces an asset, the cache buster updates automatically - even for images embedded in content or templates - ensuring Cloudflare and other CDNs serve the new version immediately.
-
-### Cache Buster Value
-
-The cache buster uses:
-
-1. **File content hash** (first 10 characters) - Changes when file content changes
-2. **Variant hash** (for image manipulations) - Different for each size/manipulation
-3. **Nothing** - If neither is available (rare for valid files)
-
-The content hash is ideal because:
-- It changes only when content changes
-- It's consistent across environments
-- It's already calculated by SilverStripe's asset system
-- Identical files have the same hash (efficient caching)
-
-## Browser Caching Headers
-
-For maximum benefit, configure your web server to set long cache expiry headers for assets.
-
-### Apache (.htaccess)
-
-```apache
-<FilesMatch "\.(jpg|jpeg|png|gif|webp|svg|css|js|woff|woff2|ttf|eot|pdf)$">
-    Header set Cache-Control "max-age=31536000, public"
-</FilesMatch>
-```
-
-### Nginx
-
-```nginx
-location ~* \.(jpg|jpeg|png|gif|webp|svg|css|js|woff|woff2|ttf|eot|pdf)$ {
-    expires 1y;
-    add_header Cache-Control "public, immutable";
-}
-```
-
-## Testing
-
-To verify cache busting is working:
-
-1. View your site's source code
-2. Find any asset URL (image, file, etc.)
-3. Confirm it has the `?m=` parameter appended
-
-Example:
-```html
-<img src="/assets/photos/image.jpg?m=abc123def4" alt="Photo">
-```
+This works everywhere: file links, images in WYSIWYG content, template references, resized images, and more. When a CMS user replaces an asset, Cloudflare and other CDNs immediately serve the new version.
 
 ## Credits
 
