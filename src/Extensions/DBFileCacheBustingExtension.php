@@ -4,7 +4,7 @@ namespace PurpleSpider\CacheBusting\Extensions;
 
 use SilverStripe\Assets\File;
 use SilverStripe\Core\Config\Config;
-use SilverStripe\ORM\DataExtension;
+use SilverStripe\Core\Extension;
 
 /**
  * Extension for DBFile to add cache busting to file URLs.
@@ -14,7 +14,7 @@ use SilverStripe\ORM\DataExtension;
  *
  * Based on: https://github.com/silverstripe/silverstripe-framework/pull/2402
  */
-class DBFileCacheBustingExtension extends DataExtension
+class DBFileCacheBustingExtension extends Extension
 {
     /**
      * Update the URL to include cache buster parameter
